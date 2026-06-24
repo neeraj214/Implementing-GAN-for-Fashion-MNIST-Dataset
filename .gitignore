@@ -17,7 +17,7 @@ node_modules/
 checkpoints/
 
 # Data
-data/
+/data/
 
 # System / Editor files
 .DS_Store
