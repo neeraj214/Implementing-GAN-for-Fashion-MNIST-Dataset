@@ -1,0 +1,61 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Check GPU",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/setup/check_gpu.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Load Fashion MNIST",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/data/load_fashion_mnist.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Generator Model",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/models/generator.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Discriminator Model",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/models/discriminator.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Train GAN",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/train.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Plot Losses",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/viz/plot_losses.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Backend FastAPI",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/backend/main.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ]
+}
