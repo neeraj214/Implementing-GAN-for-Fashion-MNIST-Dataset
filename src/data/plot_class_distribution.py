@@ -2,6 +2,7 @@ import os
 import sys
 import json
 import numpy as np
+# pyrefly: ignore [missing-import]
 import matplotlib.pyplot as plt
 
 # Add the project root to python path to import setup and src modules
