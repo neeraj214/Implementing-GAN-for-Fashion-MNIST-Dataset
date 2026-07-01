@@ -1,6 +1,7 @@
+from tensorflow import Tensor
 from tensorflow.keras.layers import Conv2D, LeakyReLU, Dropout
 
-def discriminator_block2(x, filters=128, dropout_rate=0.3):
+def discriminator_block2(x: Tensor, filters: int = 128, dropout_rate: float = 0.3) -> Tensor:
     """
     Second convolutional block of the discriminator.
     stride=2 downsamples 14x14 → 7x7, extracts higher-level features.
