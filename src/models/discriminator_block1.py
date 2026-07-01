@@ -1,6 +1,7 @@
+from tensorflow import Tensor
 from tensorflow.keras.layers import Conv2D, LeakyReLU, Dropout
 
-def discriminator_block1(x, filters=64, dropout_rate=0.3):
+def discriminator_block1(x: Tensor, filters: int = 64, dropout_rate: float = 0.3) -> Tensor:
     """
     First convolutional block of the discriminator.
     stride=2 downsamples 28x28 → 14x14, extracts low-level features.
