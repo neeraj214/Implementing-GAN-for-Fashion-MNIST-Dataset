@@ -6,10 +6,10 @@ if gpus:
     for gpu in gpus:
         tf.config.experimental.set_memory_growth(gpu, True)
     DEVICE = '/GPU:0'
-    print(f"✅ Using GPU: {gpus[0].name}")
+    print(f"GPU Available: Using GPU: {gpus[0].name}")
 else:
     DEVICE = '/CPU:0'
-    print("⚠️  Using CPU")
+    print("GPU NOT Available: Using CPU")
 
 BASE_DIR     = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MODELS_DIR   = os.path.join(BASE_DIR, 'models')
