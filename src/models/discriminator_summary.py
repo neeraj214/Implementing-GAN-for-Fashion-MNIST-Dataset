@@ -39,15 +39,19 @@ def main():
     except Exception as e:
         print(f"Could not plot model architecture: {e}")
 
-    # Sanity test
+    # Sanity test using a generated fake image from the Generator
     generator = build_generator()
     noise = tf.random.normal([1, LATENT_DIM])
     fake_image = generator(noise, training=False)
+    
+    # Pass the generated image to the discriminator
     decision = discriminator(fake_image, training=False)
-    print(f"Discriminator decision on untrained fake image: {decision.numpy()}")
+    print(f"Sanity Check: Discriminator raw logit output for fake image: {decision.numpy()}")
 
-    # Print success message
-    print(f"Discriminator built successfully - output shape: {discriminator.output_shape}")
+    # Print success message with detailed metadata info
+    print(f"Discriminator successfully built!")
+    print(f"Expected Input Shape : {discriminator.input_shape}")
+    print(f"Expected Output Shape: {discriminator.output_shape}")
 
 if __name__ == "__main__":
     main()
