@@ -17,6 +17,7 @@ METRICS_DIR  = os.path.join(BASE_DIR, 'outputs', 'metrics')
 PLOTS_DIR    = os.path.join(BASE_DIR, 'outputs', 'plots')
 CKPT_DIR     = os.path.join(BASE_DIR, 'checkpoints')
 
+# Image configuration parameters
 IMAGE_SIZE     = 28
 CHANNELS       = 1
 LATENT_DIM     = 100
@@ -24,12 +25,14 @@ NUM_CLASSES    = 10
 CLASS_NAMES    = ['T-shirt','Trouser','Pullover','Dress','Coat',
                    'Sandal','Shirt','Sneaker','Bag','Ankle boot']
 
+# Optimization and training hyperparameters
 GEN_LR         = 0.0002
 DISC_LR        = 0.0002
-BETA_1         = 0.5
+BETA_1         = 0.5        # Adam beta_1 parameter (momentum decay rate)
 BATCH_SIZE     = 128       # reduce to 64 if GPU OOM (RTX 2050)
 EPOCHS         = 50
 NUM_EXAMPLES   = 16         # for sample grid
 SEED           = 42
+
 
 tf.random.set_seed(SEED)
