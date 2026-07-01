@@ -25,11 +25,21 @@ def build_discriminator(image_size=IMAGE_SIZE, channels=CHANNELS):
     Returns:
         Model: A Keras Model instance representing the discriminator.
     """
+    # 1. Instantiate the Input Layer (default shape: 28x28x1)
     inputs = build_discriminator_input(image_size, channels)
+    
+    # 2. First Conv Block: downsample 28x28 -> 14x14, extracts 64 filters
     x = discriminator_block1(inputs)
+    
+    # 3. Second Conv Block: downsample 14x14 -> 7x7, extracts 128 filters
     x = discriminator_block2(x)
+    
+    # 4. Flatten spatial feature maps (7x7x128 = 6272 flat size)
     x = flatten_features(x)
+    
+    # 5. Output Layer: single dense classification logit (real vs fake)
     outputs = discriminator_output(x)
+    
     model = Model(inputs, outputs, name="discriminator")
     return model
 
