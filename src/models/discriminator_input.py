@@ -1,7 +1,8 @@
+from tensorflow import Tensor
 from tensorflow.keras.layers import Input
 from setup.train_config import IMAGE_SIZE, CHANNELS
 
-def build_discriminator_input(image_size=IMAGE_SIZE, channels=CHANNELS):
+def build_discriminator_input(image_size: int = IMAGE_SIZE, channels: int = CHANNELS) -> Tensor:
     """
     Creates the input layer for the discriminator model.
 
